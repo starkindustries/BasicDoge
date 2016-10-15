@@ -30,29 +30,15 @@ class GameViewController: UIViewController {
         view.ignoresSiblingOrder = true
         view.showsFPS = true
         view.showsNodeCount = true
-        
-        /*if let scene = GameScene(fileNamed: "GameScene"){
-            scene.scaleMode = .aspectFill
-            // Present the scene
-            if let view = self.view as! SKView? {
-                view.presentScene(scene)
-                view.ignoresSiblingOrder = true
-                view.showsFPS = true
-                view.showsNodeCount = true
-            }
-        }*/
     }
-
+    
+    // http://stackoverflow.com/questions/25651969/setting-device-orientation-in-swift-ios
     override var shouldAutorotate: Bool {
-        return true
+        return false
     }
 
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            return .allButUpsideDown
-        } else {
-            return .all
-        }
+        return .portrait
     }
 
     override func didReceiveMemoryWarning() {
